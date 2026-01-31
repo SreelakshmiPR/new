@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int rows;
+
+    // Ask user for number of rows
+    printf("Enter number of rows for the star pyramid: ");
+    if (scanf("%d", &rows) != 1 || rows <= 0) {
+        printf("Invalid input. Please enter a positive integer.\n");
+        return 1; // Exit with error
+    }
+
+    // Print a single star
+    printf("\nSingle star:\n");
+    printf("*\n");
+
+    // Print pyramid pattern
+    printf("\nStar Pyramid:\n");
+    for (int i = 1; i <= rows; i++) {
+        // Print spaces
+        for (int space = 1; space <= rows - i; space++) {
+            printf(" ");
+        }
+        // Print stars
+        for (int star = 1; star <= (2 * i - 1); star++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
